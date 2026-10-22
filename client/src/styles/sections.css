@@ -36,7 +36,8 @@
   display: flex;
   flex-direction: column;
   padding-inline: calc(var(--gutter) * 0.5);
-  font-size: clamp(4.5rem, 22vw, 26rem);
+  /* Capped by height too, so the role and CTAs stay above the fold on short screens. */
+  font-size: clamp(4.5rem, min(22vw, 56svh - 160px), 26rem);
   font-weight: 900;
   font-stretch: 82%;
   line-height: 0.8;
