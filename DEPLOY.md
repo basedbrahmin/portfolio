@@ -38,17 +38,11 @@ Deploy in this order. Each step needs a value from the one before it.
 
 ## 2. GitHub
 
-The repo is already initialised with commits. Log in as **basedbrahmin** and push:
+The repo is [github.com/basedbrahmin/portfolio](https://github.com/basedbrahmin/portfolio) and the `origin` remote is already set. Log in as **basedbrahmin**, then push:
 
 ```bash
-gh auth login                 # choose GitHub.com, log in as basedbrahmin
-gh repo create ashmit-portfolio --public --source=. --remote=origin --push
-```
-
-Or without `gh`: create an empty public repo named `ashmit-portfolio` on github.com, then:
-
-```bash
-git remote add origin https://github.com/basedbrahmin/ashmit-portfolio.git
+gh auth login        # GitHub.com → HTTPS → log in as basedbrahmin in the browser
+gh auth setup-git    # lets git use that login
 git push -u origin main
 ```
 
@@ -57,7 +51,7 @@ git push -u origin main
 ## 3. Render (backend)
 
 **Option A: Blueprint (fastest)**
-[dashboard.render.com](https://dashboard.render.com) → **New** → **Blueprint** → select `ashmit-portfolio`. Render reads `render.yaml` and asks for the values marked secret below.
+[dashboard.render.com](https://dashboard.render.com) → **New** → **Blueprint** → select `portfolio`. Render reads `render.yaml` and asks for the values marked secret below.
 
 **Option B: Manual**
 **New** → **Web Service** → select the repo, then set:
@@ -97,7 +91,7 @@ If `db` is `false`, re-check `MONGODB_URI` and Atlas Network Access.
 
 ## 4. Vercel (frontend)
 
-[vercel.com/new](https://vercel.com/new) → import `ashmit-portfolio`, then set:
+[vercel.com/new](https://vercel.com/new) → import `portfolio`, then set:
 
 | Setting           | Value            |
 | ----------------- | ---------------- |
