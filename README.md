@@ -56,26 +56,36 @@ server/                Express API
 
 ## Local setup
 
-Requirements: Node 20+ and a MongoDB connection string (Atlas free tier works).
+Requirements: Node 22 and a MongoDB Atlas connection string.
 
 ```bash
-git clone <repo-url> && cd <repo>
+git clone https://github.com/basedbrahmin/portfolio.git && cd portfolio
 
 # 1. Backend
 cd server
 npm install
-cp .env.example .env        # fill in MONGODB_URI (and SMTP_* for email, optional)
+cp .env.example .env        # paste your MONGODB_URI (email keys are optional)
 npm run seed                # loads src/data/content.json into MongoDB
 npm run dev                 # http://localhost:5000
 
 # 2. Frontend (new terminal)
 cd client
 npm install
-cp .env.example .env        # VITE_API_URL=http://localhost:5000
-npm run dev                 # http://localhost:5173
+npm run dev                 # http://localhost:5173 (talks to localhost:5000)
 ```
 
 Without `MONGODB_URI` the API still serves content from `content.json`, but the contact form returns 503.
+
+## Environment variables
+
+Only sensitive values are environment variables, and `.env` is never committed.
+
+| Key | Where | Required |
+|---|---|---|
+| `MONGODB_URI` | `server/.env` / Render | ✅ |
+| `SMTP_USER`, `SMTP_PASS`, `MAIL_TO` | `server/.env` / Render | optional (Nodemailer alerts) |
+
+The public API URL used by the production build is committed in `client/.env.production`.
 
 ## Updating content
 
@@ -90,7 +100,7 @@ Without `MONGODB_URI` the API still serves content from `content.json`, but the 
 
 Frontend on **Vercel**, backend on **Render**, database on **MongoDB Atlas**. Step-by-step instructions and every environment variable are in **[DEPLOY.md](DEPLOY.md)**.
 
-The free Render instance is kept awake by a built-in self-ping every 10 minutes, a GitHub Actions workflow (`.github/workflows/keep-alive.yml`), and optionally an UptimeRobot monitor.
+The free Render instance is kept awake by a built-in self-ping every 10 minutes and a GitHub Actions workflow (`.github/workflows/keep-alive.yml`).
 
 ## Security
 

@@ -1,13 +1,15 @@
 import nodemailer from 'nodemailer';
 
-const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_TO, MAIL_FROM } = process.env;
+// Only the credentials live in env. Brevo on port 2525 because Render's free tier blocks 25/465/587.
+const SMTP_HOST = 'smtp-relay.brevo.com';
+const SMTP_PORT = 2525;
+const { SMTP_USER, SMTP_PASS, MAIL_TO } = process.env;
 
 const transporter =
-  SMTP_HOST && SMTP_USER && SMTP_PASS
+  SMTP_USER && SMTP_PASS && MAIL_TO
     ? nodemailer.createTransport({
         host: SMTP_HOST,
-        port: Number(SMTP_PORT) || 587,
-        secure: Number(SMTP_PORT) === 465,
+        port: SMTP_PORT,
         auth: { user: SMTP_USER, pass: SMTP_PASS },
         // Fail fast if the host blocks SMTP instead of hanging for minutes.
         connectionTimeout: 10_000,
@@ -23,8 +25,8 @@ export async function notifyNewMessage({ name, email, message }) {
   if (!transporter) return false;
   try {
     await transporter.sendMail({
-      from: `"Portfolio" <${MAIL_FROM || SMTP_USER}>`,
-      to: MAIL_TO || SMTP_USER,
+      from: `"Portfolio" <${MAIL_TO}>`, // must be a verified sender in Brevo
+      to: MAIL_TO,
       replyTo: email,
       subject: `New portfolio message from ${name}`,
       text: `${name} <${email}>\n\n${message}`,

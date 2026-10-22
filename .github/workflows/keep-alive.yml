@@ -1,5 +1,4 @@
 # Backup pinger in case the server's own keep-alive misses (e.g. right after a deploy).
-# Set the repository variable API_URL (Settings → Secrets and variables → Actions → Variables).
 name: Keep API awake
 
 on:
@@ -14,10 +13,6 @@ jobs:
     steps:
       - name: Ping /api/health
         env:
-          API_URL: ${{ vars.API_URL }}
+          API_URL: https://ashmit-portfolio-api.onrender.com
         run: |
-          if [ -z "$API_URL" ]; then
-            echo "::warning::Repository variable API_URL is not set"
-            exit 0
-          fi
-          curl -fsS --retry 3 --retry-delay 15 --max-time 90 "$API_URL/api/health"
+          curl -fsS --retry 3 --retry-delay 15 --max-time 90 "$API_URL/api/health" || echo "::warning::API not reachable yet"

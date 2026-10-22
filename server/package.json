@@ -10,7 +10,7 @@
     "seed": "node src/seed.js"
   },
   "engines": {
-    "node": ">=20.19"
+    "node": "22.x"
   },
   "dependencies": {
     "cors": "^2.8.6",
