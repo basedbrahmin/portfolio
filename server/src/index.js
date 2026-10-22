@@ -7,11 +7,17 @@ import contactRoutes from './routes/contact.js';
 import cvRoutes from './routes/cv.js';
 import { startKeepAlive } from './lib/keepAlive.js';
 
-const { PORT = 5000, MONGODB_URI } = process.env;
+const { PORT = 5000, MONGODB_URI, CLIENT_URL = '' } = process.env;
+
+// Browsers may only call the API from the deployed frontend (CLIENT_URL, comma-separated) or local dev.
+const allowedOrigins = [
+  'http://localhost:5173',
+  ...CLIENT_URL.split(',').map((url) => url.trim().replace(/\/$/, '')).filter(Boolean),
+];
 const app = express();
 
 app.set('trust proxy', 1); // behind Render/Railway proxy, needed for rate limiting
-app.use(cors()); // public read-only API; the contact route is rate limited
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json({ limit: '10kb' }));
 
 app.get('/api/health', (req, res) => res.json({ ok: true, db: isDbReady() }));

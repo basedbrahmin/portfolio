@@ -11,3 +11,5 @@ services:
     envVars:
       - key: MONGODB_URI
         sync: false
+      - key: CLIENT_URL
+        sync: false

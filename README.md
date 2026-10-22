@@ -83,6 +83,7 @@ Only sensitive values are environment variables, and `.env` is never committed.
 | Key | Where | Required |
 |---|---|---|
 | `MONGODB_URI` | `server/.env` / Render | ✅ |
+| `CLIENT_URL` | Render (frontend URL for CORS) | ✅ in production |
 
 The public API URL used by the production build is committed in `client/.env.production`.
 
