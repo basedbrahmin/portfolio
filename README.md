@@ -2,8 +2,8 @@
 
 A full-stack MERN portfolio with a bold editorial design: a generative hero canvas, GSAP scroll animation, dark/light mode, project case studies, and a contact form backed by MongoDB. Contact messages are stored in MongoDB and read in Atlas (Browse Collections → `portfolio.messages`).
 
-**Live site:** _add after deploying (see [DEPLOY.md](DEPLOY.md))_
-**API:** _add after deploying_
+**Live site:** https://portfolio-basedbrahmin.vercel.app
+**API:** https://portfolio-pq5n.onrender.com/api/health
 
 ## Features
 

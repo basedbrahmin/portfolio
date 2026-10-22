@@ -9,8 +9,9 @@ import { startKeepAlive } from './lib/keepAlive.js';
 
 const { PORT = 5000, MONGODB_URI, CLIENT_URL = '' } = process.env;
 
-// Browsers may only call the API from the deployed frontend (CLIENT_URL, comma-separated) or local dev.
+// Browsers may only call the API from the deployed frontend, local dev, or extra origins in CLIENT_URL.
 const allowedOrigins = [
+  'https://portfolio-basedbrahmin.vercel.app',
   'http://localhost:5173',
   ...CLIENT_URL.split(',').map((url) => url.trim().replace(/\/$/, '')).filter(Boolean),
 ];

@@ -7,14 +7,14 @@ As the assignment requires: frontend on **Vercel**, backend on **Render**, datab
 | Where | Key | Value | Required |
 |---|---|---|---|
 | Render | `MONGODB_URI` | Atlas connection string ending in `/portfolio?retryWrites=true&w=majority` | ✅ |
-| Render | `CLIENT_URL` | your Vercel URL, e.g. `https://portfolio-xyz.vercel.app` (no trailing slash) | ✅ |
+| Render | `CLIENT_URL` | only for extra frontend URLs (the main site is allowed in code) | optional |
 | Vercel | none | | |
 | `server/.env` (local) | `MONGODB_URI` | same as Render | ✅ |
 
 Everything that isn't secret is committed config:
 
-- **API URL for the frontend:** `client/.env.production` → `https://ashmit-portfolio-api.onrender.com`
-- **CORS:** only `CLIENT_URL` and `http://localhost:5173` may call the API from a browser
+- **API URL for the frontend:** `client/.env.production` → `https://portfolio-pq5n.onrender.com`
+- **CORS:** only the live site, `http://localhost:5173` and any `CLIENT_URL` origins may call the API from a browser
 - **Node version:** `engines` in `server/package.json` (22.x)
 - **Keep-alive URL:** Render provides `RENDER_EXTERNAL_URL` automatically
 
@@ -30,7 +30,7 @@ Everything that isn't secret is committed config:
 
 1. [dashboard.render.com](https://dashboard.render.com) → **New → Blueprint** → select `basedbrahmin/portfolio`.
 2. Keep the service name **`ashmit-portfolio-api`**, paste `MONGODB_URI` and leave `CLIENT_URL` empty for now.
-3. Open `https://ashmit-portfolio-api.onrender.com/api/health`. It should return `{"ok":true,"db":true}`.
+3. Open `https://portfolio-pq5n.onrender.com/api/health`. It should return `{"ok":true,"db":true}`.
 
 If Render gives a different URL (for example because the name is taken), put it in `client/.env.production` and `.github/workflows/keep-alive.yml`, then push.
 
@@ -39,7 +39,7 @@ If Render gives a different URL (for example because the name is taken), put it 
 1. [vercel.com/new](https://vercel.com/new) → import `basedbrahmin/portfolio`.
 2. Set **Root Directory** to `client`. Vite is detected automatically, and no environment variables are needed.
 3. Deploy. `client/vercel.json` handles page refreshes on routes like `/projects/portfolio`.
-4. Copy the Vercel URL into Render → Environment → `CLIENT_URL` and save. Render redeploys, and the contact form now works from the live site.
+4. **Settings → Deployment Protection → Vercel Authentication → Disabled**, so the public can open the site without a Vercel login.
 
 ## 4. Keep the API awake
 

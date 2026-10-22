@@ -55,7 +55,7 @@
       "name": "React",
       "category": "Frontend",
       "level": 55,
-      "note": "Components, hooks and routing (Progress Tracker, this site)"
+      "note": "Components, hooks and routing, learned building this site"
     },
     {
       "name": "C++",
@@ -88,7 +88,7 @@
       "name": "Node.js & Express",
       "category": "Backend",
       "level": 55,
-      "note": "REST APIs for Progress Tracker and this portfolio"
+      "note": "REST APIs powering this portfolio"
     },
     {
       "name": "MongoDB",
@@ -146,7 +146,7 @@
         "GSAP"
       ],
       "github": "https://github.com/basedbrahmin/portfolio",
-      "live": "",
+      "live": "https://portfolio-basedbrahmin.vercel.app",
       "overview": "Built for my MERN stack course, this portfolio goes beyond a static page. Content is served from a MongoDB database through an Express REST API, the contact form stores messages with Mongoose, and both CV formats are downloaded from backend routes.",
       "highlights": [
         "Cursor-reactive generative canvas in the hero",
@@ -156,38 +156,13 @@
       ]
     },
     {
-      "slug": "progress-tracker",
-      "title": "Progress Tracker",
-      "tagline": "Habit, task and goal tracker with a REST API",
-      "description": "A productivity app for tracking daily habits, tasks and goals. It has a React frontend with Today, Habits, Tasks and Goals views, backed by an Express REST API and a MySQL database.",
-      "year": 2026,
-      "featured": true,
-      "order": 2,
-      "role": "Full-stack developer",
-      "tech": [
-        "React",
-        "Node.js",
-        "Express",
-        "MySQL"
-      ],
-      "github": "https://github.com/basedbrahmin/Progress-Tracker",
-      "live": "",
-      "overview": "I planned Progress Tracker properly before writing code, with an app discovery and workflow design doc, a software requirements document and a build roadmap. The frontend is a React single-page app with bottom navigation between Today, Habits, Tasks and Goals. The backend is an Express API on MySQL with SQL migrations, supporting habits measured as yes/no, numbers, durations, pages or percentages, with daily logs.",
-      "highlights": [
-        "REST API for habits: create, read, update, archive and delete",
-        "Normalised MySQL schema for users, categories, habits, logs and goals, run through migrations",
-        "Flexible tracking types: yes/no, number, duration, pages and percentage",
-        "Planned with workflow design, requirements and roadmap documents"
-      ]
-    },
-    {
       "slug": "college-fest-management",
       "title": "College Fest Management System",
       "tagline": "Database-backed system for running college fests",
       "description": "A DBMS project that streamlines college fest operations by managing event data, participant registrations and organiser workflows in one relational database.",
       "year": 2025,
       "featured": true,
-      "order": 3,
+      "order": 2,
       "role": "Database developer",
       "tech": [
         "MySQL",
@@ -201,29 +176,6 @@
         "Relational schema for events, participants and registrations",
         "Organiser workflows backed by SQL queries",
         "Inspired by organising events with ~600 participants"
-      ]
-    },
-    {
-      "slug": "boiler-drum-level-control",
-      "title": "Boiler Drum Level Control",
-      "tagline": "Three-element PID control on a DCS",
-      "description": "A distributed control system (DCS) project implementing three-element PID control, with alarms and interlocks to keep the boiler drum level stable under changing load.",
-      "year": 2025,
-      "featured": false,
-      "order": 4,
-      "role": "Control system designer",
-      "tech": [
-        "DCS",
-        "PID Control",
-        "Process Control"
-      ],
-      "github": "",
-      "live": "",
-      "overview": "Drum level is one of the hardest loops in a boiler to control because of shrink and swell effects. A three-element strategy combines drum level, steam flow and feedwater flow so the controller reacts to load changes before the level drifts.",
-      "highlights": [
-        "Three-element PID control strategy",
-        "Alarms and safety interlocks",
-        "Stable drum level under variable load"
       ]
     }
   ],
