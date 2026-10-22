@@ -3,7 +3,12 @@
     "name": "Ashmit Sharma",
     "firstName": "Ashmit",
     "lastName": "Sharma",
-    "roles": ["CSE Student @ JKLU", "Aspiring Full-Stack Developer", "Problem Solver", "Event Organiser"],
+    "roles": [
+      "CSE Student @ JKLU",
+      "Aspiring Full-Stack Developer",
+      "Problem Solver",
+      "Event Organiser"
+    ],
     "headline": "Computer science student building with code, databases and a lot of curiosity.",
     "bio": "I'm a second-year Computer Science & Engineering student at JK Lakshmipat University in Jaipur. My foundation is C++, data structures and algorithms, OOP and databases, and my internship gave me hands-on experience in Windows system administration and networking. Outside class I help run university events with around 600 participants and edit short-form videos. Now I'm building for the web with the MERN stack and looking for internships where I can learn by shipping real things.",
     "location": "Jaipur, India",
@@ -13,27 +18,115 @@
     "phone": "+91 9116639964",
     "photo": "/profile.jpg",
     "socials": [
-      { "label": "GitHub", "url": "https://github.com/basedbrahmin" },
-      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/ashmit-sharma-8a9622323/" },
-      { "label": "Instagram", "url": "https://www.instagram.com/based._.brahmin/" }
+      {
+        "label": "GitHub",
+        "url": "https://github.com/basedbrahmin"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/ashmit-sharma-8a9622323/"
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/based._.brahmin/"
+      }
     ]
   },
   "skills": [
-    { "name": "HTML", "category": "Frontend", "level": 80, "note": "Semantic, accessible page structure" },
-    { "name": "CSS", "category": "Frontend", "level": 72, "note": "Layouts with flexbox and grid, responsive design" },
-    { "name": "JavaScript", "category": "Frontend", "level": 60, "note": "Fundamentals, DOM and async basics" },
-    { "name": "React", "category": "Frontend", "level": 55, "note": "Components, hooks and routing, learned building this site" },
-    { "name": "C++", "category": "Backend", "level": 80, "top": true, "note": "Primary language for DSA and problem solving" },
-    { "name": "Python", "category": "Backend", "level": 70, "top": true, "note": "Scripting and coursework" },
-    { "name": "Java", "category": "Backend", "level": 65, "note": "OOP concepts and coursework" },
-    { "name": "MySQL", "category": "Backend", "level": 75, "top": true, "note": "Schema design and SQL queries (DBMS)" },
-    { "name": "Node.js & Express", "category": "Backend", "level": 55, "note": "REST APIs powering this portfolio" },
-    { "name": "MongoDB", "category": "Backend", "level": 50, "note": "Mongoose models for this portfolio's contact form" },
-    { "name": "DSA", "category": "Tools & Technologies", "level": 75, "top": true, "note": "Data structures and algorithms in C++" },
-    { "name": "OOP", "category": "Tools & Technologies", "level": 78, "note": "Classes, inheritance, polymorphism" },
-    { "name": "Git & GitHub", "category": "Tools & Technologies", "level": 70, "note": "Version control and collaboration" },
-    { "name": "Windows Sys Admin", "category": "Tools & Technologies", "level": 75, "note": "Hands-on during IT internship" },
-    { "name": "Networking", "category": "Tools & Technologies", "level": 65, "note": "Network setup and troubleshooting" }
+    {
+      "name": "HTML",
+      "category": "Frontend",
+      "level": 80,
+      "note": "Semantic, accessible page structure"
+    },
+    {
+      "name": "CSS",
+      "category": "Frontend",
+      "level": 72,
+      "note": "Layouts with flexbox and grid, responsive design"
+    },
+    {
+      "name": "JavaScript",
+      "category": "Frontend",
+      "level": 60,
+      "note": "Fundamentals, DOM and async basics"
+    },
+    {
+      "name": "React",
+      "category": "Frontend",
+      "level": 55,
+      "note": "Components, hooks and routing (Progress Tracker, this site)"
+    },
+    {
+      "name": "C++",
+      "category": "Backend",
+      "level": 80,
+      "top": true,
+      "note": "Primary language for DSA and problem solving"
+    },
+    {
+      "name": "Python",
+      "category": "Backend",
+      "level": 70,
+      "top": true,
+      "note": "Scripting and coursework"
+    },
+    {
+      "name": "Java",
+      "category": "Backend",
+      "level": 65,
+      "note": "OOP concepts and coursework"
+    },
+    {
+      "name": "MySQL",
+      "category": "Backend",
+      "level": 75,
+      "top": true,
+      "note": "Schema design, migrations and SQL queries"
+    },
+    {
+      "name": "Node.js & Express",
+      "category": "Backend",
+      "level": 55,
+      "note": "REST APIs for Progress Tracker and this portfolio"
+    },
+    {
+      "name": "MongoDB",
+      "category": "Backend",
+      "level": 50,
+      "note": "Mongoose models for this portfolio's contact form"
+    },
+    {
+      "name": "DSA",
+      "category": "Tools & Technologies",
+      "level": 75,
+      "top": true,
+      "note": "Data structures and algorithms in C++"
+    },
+    {
+      "name": "OOP",
+      "category": "Tools & Technologies",
+      "level": 78,
+      "note": "Classes, inheritance, polymorphism"
+    },
+    {
+      "name": "Git & GitHub",
+      "category": "Tools & Technologies",
+      "level": 70,
+      "note": "Version control and collaboration"
+    },
+    {
+      "name": "Windows Sys Admin",
+      "category": "Tools & Technologies",
+      "level": 75,
+      "note": "Hands-on during IT internship"
+    },
+    {
+      "name": "Networking",
+      "category": "Tools & Technologies",
+      "level": 65,
+      "note": "Network setup and troubleshooting"
+    }
   ],
   "projects": [
     {
@@ -45,8 +138,14 @@
       "featured": true,
       "order": 1,
       "role": "Designer & full-stack developer",
-      "tech": ["React", "Node.js", "Express", "MongoDB", "GSAP"],
-      "github": "https://github.com/basedbrahmin/ashmit-portfolio",
+      "tech": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "GSAP"
+      ],
+      "github": "https://github.com/basedbrahmin/portfolio",
       "live": "",
       "overview": "Built for my MERN stack course, this portfolio goes beyond a static page. Content is served from a MongoDB database through an Express REST API, the contact form stores messages with Mongoose and emails me through Nodemailer, and both CV formats are downloaded from backend routes.",
       "highlights": [
@@ -57,15 +156,44 @@
       ]
     },
     {
+      "slug": "progress-tracker",
+      "title": "Progress Tracker",
+      "tagline": "Habit, task and goal tracker with a REST API",
+      "description": "A productivity app for tracking daily habits, tasks and goals. It has a React frontend with Today, Habits, Tasks and Goals views, backed by an Express REST API and a MySQL database.",
+      "year": 2026,
+      "featured": true,
+      "order": 2,
+      "role": "Full-stack developer",
+      "tech": [
+        "React",
+        "Node.js",
+        "Express",
+        "MySQL"
+      ],
+      "github": "https://github.com/basedbrahmin/Progress-Tracker",
+      "live": "",
+      "overview": "I planned Progress Tracker properly before writing code, with an app discovery and workflow design doc, a software requirements document and a build roadmap. The frontend is a React single-page app with bottom navigation between Today, Habits, Tasks and Goals. The backend is an Express API on MySQL with SQL migrations, supporting habits measured as yes/no, numbers, durations, pages or percentages, with daily logs.",
+      "highlights": [
+        "REST API for habits: create, read, update, archive and delete",
+        "Normalised MySQL schema for users, categories, habits, logs and goals, run through migrations",
+        "Flexible tracking types: yes/no, number, duration, pages and percentage",
+        "Planned with workflow design, requirements and roadmap documents"
+      ]
+    },
+    {
       "slug": "college-fest-management",
       "title": "College Fest Management System",
       "tagline": "Database-backed system for running college fests",
       "description": "A DBMS project that streamlines college fest operations by managing event data, participant registrations and organiser workflows in one relational database.",
       "year": 2025,
       "featured": true,
-      "order": 2,
+      "order": 3,
       "role": "Database developer",
-      "tech": ["MySQL", "SQL", "DBMS"],
+      "tech": [
+        "MySQL",
+        "SQL",
+        "DBMS"
+      ],
       "github": "",
       "live": "",
       "overview": "Running fests with hundreds of participants showed me how messy spreadsheets get. This system models events, participants and organisers in a relational database so registrations and event data stay consistent and easy to query.",
@@ -82,9 +210,13 @@
       "description": "A distributed control system (DCS) project implementing three-element PID control, with alarms and interlocks to keep the boiler drum level stable under changing load.",
       "year": 2025,
       "featured": false,
-      "order": 3,
+      "order": 4,
       "role": "Control system designer",
-      "tech": ["DCS", "PID Control", "Process Control"],
+      "tech": [
+        "DCS",
+        "PID Control",
+        "Process Control"
+      ],
       "github": "",
       "live": "",
       "overview": "Drum level is one of the hardest loops in a boiler to control because of shrink and swell effects. A three-element strategy combines drum level, steam flow and feedwater flow so the controller reacts to load changes before the level drifts.",

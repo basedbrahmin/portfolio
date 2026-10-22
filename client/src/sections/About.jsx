@@ -25,6 +25,7 @@ export default function About() {
         scale: 1.3,
         duration: 1.8,
         ease: 'power3.out',
+        clearProps: 'transform',
         scrollTrigger: { trigger: '.about__photo', start: 'top 80%', once: true },
       });
     },
@@ -53,10 +54,7 @@ export default function About() {
 
       <div className="about__grid">
         <figure className="about__photo" data-cursor="Hi!">
-          <img className="about__img about__img--color" src={profile.photo} alt={`Portrait of ${profile.name}`} />
-          <div className="about__duotone" aria-hidden="true">
-            <img className="about__img" src={profile.photo} alt="" />
-          </div>
+          <img className="about__img" src={profile.photo} alt={`Portrait of ${profile.name}`} />
           <figcaption className="mono">( {profile.name} )</figcaption>
         </figure>
 
