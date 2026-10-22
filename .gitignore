@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+
+# Raw source files (processed copies live in client/public and server/files)
+/Ashmit_Sharma_Resume*.docx
+/WhatsApp Image*
+/MERN_Portfolio_Assignment.pdf
