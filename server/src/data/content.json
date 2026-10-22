@@ -147,7 +147,7 @@
       ],
       "github": "https://github.com/basedbrahmin/portfolio",
       "live": "",
-      "overview": "Built for my MERN stack course, this portfolio goes beyond a static page. Content is served from a MongoDB database through an Express REST API, the contact form stores messages with Mongoose and emails me through Nodemailer, and both CV formats are downloaded from backend routes.",
+      "overview": "Built for my MERN stack course, this portfolio goes beyond a static page. Content is served from a MongoDB database through an Express REST API, the contact form stores messages with Mongoose, and both CV formats are downloaded from backend routes.",
       "highlights": [
         "Cursor-reactive generative canvas in the hero",
         "Project filtering and sorting animated with GSAP Flip",

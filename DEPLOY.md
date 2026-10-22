@@ -7,18 +7,14 @@ As the assignment requires: frontend on **Vercel**, backend on **Render**, datab
 | Where | Key | Value | Required |
 |---|---|---|---|
 | Render | `MONGODB_URI` | Atlas connection string ending in `/portfolio?retryWrites=true&w=majority` | ✅ |
-| Render | `SMTP_USER` | Brevo SMTP login | optional (email alerts) |
-| Render | `SMTP_PASS` | Brevo SMTP key | optional (email alerts) |
-| Render | `MAIL_TO` | `ashmits004@gmail.com` (verified sender in Brevo) | optional (email alerts) |
 | Vercel | none | | |
-| `server/.env` (local) | same keys as Render | | |
+| `server/.env` (local) | `MONGODB_URI` | same as Render | ✅ |
 
 Everything that isn't secret is committed config:
 
 - **API URL for the frontend:** `client/.env.production` → `https://ashmit-portfolio-api.onrender.com`
 - **CORS:** open (public read-only API; the contact route is rate limited)
 - **Node version:** `engines` in `server/package.json` (22.x)
-- **SMTP host/port:** `smtp-relay.brevo.com:2525`, set in `server/src/lib/mailer.js`
 - **Keep-alive URL:** Render provides `RENDER_EXTERNAL_URL` automatically
 
 ## 1. MongoDB Atlas
@@ -51,13 +47,9 @@ Render free sleeps after 15 minutes idle. Three things keep it awake:
 2. **GitHub Actions:** `.github/workflows/keep-alive.yml` pings every 10 minutes. No setup needed.
 3. **UptimeRobot (optional, most reliable):** add a free HTTP monitor on `/api/health` every 5 minutes.
 
-## 5. Email alerts (optional; Nodemailer is optional in the brief)
+## 5. Reading contact messages
 
-1. Create a free [Brevo](https://www.brevo.com) account and verify `ashmits004@gmail.com` as a sender.
-2. **SMTP & API → SMTP:** copy the login and generate a key.
-3. Add `SMTP_USER`, `SMTP_PASS` and `MAIL_TO` on Render.
-
-Gmail SMTP won't work on Render's free tier, which [blocks ports 25/465/587](https://render.com/changelog/free-web-services-will-no-longer-allow-outbound-traffic-to-smtp-ports).
+Messages are saved to MongoDB (email via Nodemailer is optional in the brief and isn't used). To read them, go to Atlas → **Browse Collections** → `portfolio` → `messages`.
 
 ## Submission checklist (from the brief)
 

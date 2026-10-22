@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
 import { isDbReady } from '../lib/db.js';
-import { notifyNewMessage } from '../lib/mailer.js';
 import Message from '../models/Message.js';
 
 const router = Router();
@@ -38,7 +37,6 @@ router.post('/contact', limiter, async (req, res) => {
   if (!isDbReady()) return res.status(503).json({ error: 'Database unavailable. Please email me directly.' });
 
   const doc = await Message.create({ name: name.trim(), email: email.trim(), message: message.trim() });
-  notifyNewMessage(doc); // fire and forget: the message is already saved
   res.status(201).json({ ok: true, id: doc._id });
 });
 

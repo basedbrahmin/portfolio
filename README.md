@@ -1,6 +1,6 @@
 # Ashmit Sharma: Portfolio
 
-A full-stack MERN portfolio with a bold editorial design: a generative hero canvas, GSAP scroll animation, dark/light mode, project case studies, and a contact form backed by MongoDB.
+A full-stack MERN portfolio with a bold editorial design: a generative hero canvas, GSAP scroll animation, dark/light mode, project case studies, and a contact form backed by MongoDB. Contact messages are stored in MongoDB and read in Atlas (Browse Collections → `portfolio.messages`).
 
 **Live site:** _add after deploying (see [DEPLOY.md](DEPLOY.md))_
 **API:** _add after deploying_
@@ -13,7 +13,7 @@ A full-stack MERN portfolio with a bold editorial design: a generative hero canv
 - **Projects:** interactive cards with tech badges, GitHub and live links, filter by technology and sort (animated with GSAP Flip), and a case-study page per project (`/projects/:slug`)
 - **Timeline:** vertical education and experience timeline with a scroll-driven progress line
 - **Certifications:** card grid with lightbox and verify links, plus hackathons and awards
-- **Contact:** validated form → Express API → MongoDB (Mongoose), optional Nodemailer email notification, rate limiting and a honeypot
+- **Contact:** validated form → Express API → MongoDB (Mongoose), with rate limiting and a honeypot
 - **CV download:** PDF and DOCX served by Express (`/api/cv/pdf`, `/api/cv/docx`)
 - Dark/light toggle (saved), Lenis smooth scroll, custom cursor, marquees, fully responsive, respects `prefers-reduced-motion`
 
@@ -22,7 +22,7 @@ A full-stack MERN portfolio with a bold editorial design: a generative hero canv
 | Layer    | Tech                                                        |
 | -------- | ----------------------------------------------------------- |
 | Frontend | React, React Router, Vite, GSAP (ScrollTrigger, Flip), Lenis |
-| Backend  | Node.js, Express, Mongoose, Nodemailer, express-rate-limit  |
+| Backend  | Node.js, Express, Mongoose, express-rate-limit              |
 | Database | MongoDB Atlas                                               |
 | Hosting  | Vercel or Netlify (client), Render or Railway (server)      |
 
@@ -64,7 +64,7 @@ git clone https://github.com/basedbrahmin/portfolio.git && cd portfolio
 # 1. Backend
 cd server
 npm install
-cp .env.example .env        # paste your MONGODB_URI (email keys are optional)
+cp .env.example .env        # paste your MONGODB_URI
 npm run seed                # loads src/data/content.json into MongoDB
 npm run dev                 # http://localhost:5000
 
@@ -83,7 +83,6 @@ Only sensitive values are environment variables, and `.env` is never committed.
 | Key | Where | Required |
 |---|---|---|
 | `MONGODB_URI` | `server/.env` / Render | ✅ |
-| `SMTP_USER`, `SMTP_PASS`, `MAIL_TO` | `server/.env` / Render | optional (Nodemailer alerts) |
 
 The public API URL used by the production build is committed in `client/.env.production`.
 
